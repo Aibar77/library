@@ -39,7 +39,6 @@ a {
 .container {
   width: 1440px;
   margin: 0 auto;
-  border: 1px solid red;
 }
 .header .container {
   height: 100%;
@@ -582,4 +581,48 @@ h2::after {
   justify-content: space-between;
   padding-bottom: 30px;
   border-bottom: 1px solid var(--white);
+}
+.socials span {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+}
+.twitter-icon {
+  background: center no-repeat url("../images/icons/twitter-icon.svg");
+}
+.insta-icon {
+  background: center no-repeat url("../images/icons/insta-icon.svg");
+}
+.facebook-icon {
+  background: center no-repeat url("../images/icons/facebook-icon.svg");
+}
+.address {
+  margin-bottom: 18px;
+}
+.socials {
+  display: flex;
+  gap: 15px;
+}
+.top-right {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: right;
+}
+.bottom-footer {
+  height: 100%;
+  font-family: Inter, sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.footer a {
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+.footer a:hover {
+  color: var(--gold);
 }
