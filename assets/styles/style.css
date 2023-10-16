@@ -37,8 +37,10 @@ a {
 }
 
 .container {
-  width: 1440px;
+  max-width: 1440px;
   margin: 0 auto;
+  border: 1px solid red;
+  overflow: hidden;
 }
 .header .container {
   height: 100%;
@@ -64,9 +66,133 @@ h1 {
 .header ul a:hover {
   color: var(--gold);
 }
-.profile-icon {
+
+.right-nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+  z-index: 101;
+}
+.header-right-profile {
+  position: relative;
+  z-index: 101;
+}
+.nav.active {
+  right: 0;
+}
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.nav-list.active {
+  right: 0;
+  transition: 0.6s all;
+}
+.nav-list-link {
+  color: var(--white);
+  font-family: Inter, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 50px;
+  transition: 0.3s all;
+}
+.nav-list-link:hover {
+  color: var(--gold);
+  border-bottom: 1px solid var(--gold);
+  transition: 0.2s all;
+}
+.nav-open {
+  position: relative;
+  z-index: 101;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 20px;
+  cursor: pointer;
+}
+.nav-open-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-open-btn .btn-elem {
+  position: relative;
+  width: 45px;
+  height: 2px;
+  background: var(--white);
+  transition: transform 0.2s linear, top 0.2s linear 0.2s;
+}
+.nav-open-btn .btn-elem::before {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 45px;
+  height: 2px;
+  top: -8px;
+  background-color: var(--white);
+  transition: transform 0.2s linear, top 0.2s linear 0.2s;
+}
+.nav-open-btn .btn-elem::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 45px;
+  height: 2px;
+  top: 8px;
+  background-color: var(--white);
+  transition: transform 0.2s linear, top 0.2s linear 0.2s;
+}
+.nav-open-btn.active .btn-elem {
+  background: transparent;
+}
+.nav-open-btn.active .btn-elem::before {
+  transform: rotate(45deg);
+  top: 0;
+  width: 35px;
+  transition: top 0.2s linear, transform 0.2s linear 0.2s;
+}
+.nav-open-btn.active .btn-elem::after {
+  transform: rotate(-45deg);
+  top: 0;
+  width: 35px;
+  transition: top 0.2s linear, transform 0.2s linear 0.2s;
+}
+.burger-filter.active {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.nav .profile-icon {
   margin-left: 40px;
   cursor: pointer;
+}
+@media screen and (max-width: 1040px) {
+  .nav-open {
+    display: flex;
+  }
+  .nav-list {
+    padding: 100px 0;
+    width: 332px;
+    flex-direction: column;
+  }
+  .nav {
+    background-color: #000;
+    position: fixed;
+    right: -100%;
+    top: 0;
+    z-index: 100;
+    transition: 0.7s all;
+  }
 }
 .profile-icon path {
   transition: all 0.2s ease;
@@ -117,6 +243,14 @@ h1 {
 
   background-color: var(--dark);
 }
+@media screen and (max-width: 1000px) {
+  .welcome-para {
+    font-size: 30px;
+    line-height: 40px;
+    letter-spacing: 2px;
+    width: 400px;
+  }
+}
 h2 {
   position: relative;
   color: var(--dark);
@@ -153,13 +287,42 @@ h2::after {
   line-height: 40px;
   margin-bottom: 20px;
 }
+.arrow {
+  display: none;
+}
 .about-slider {
   display: flex;
+  justify-content: center;
   gap: 25px;
+}
+button.tablet {
+  display: none;
+}
+button.mobile {
+  display: none;
+}
+@media screen and (max-width: 1439px) {
+  img.tablet {
+    display: none;
+  }
+  button.tablet {
+    display: flex;
+  }
+}
+@media screen and (max-width: 960px) {
+  img.mobile {
+    display: none;
+  }
+  button.mobile {
+    display: flex;
+  }
+  .arrow {
+    display: flex;
+  }
 }
 .pagination {
   margin: 40px auto;
-  width: 100px;
+  min-width: 100px;
   height: 26px;
   display: flex;
   justify-content: space-around;
@@ -225,8 +388,16 @@ h2::after {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: 220px;
+  /* column-gap: 220px; */
+  column-gap: 10%;
   row-gap: 20px;
+}
+@media screen and (max-width: 1330px) {
+  .books {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    row-gap: 30px;
+  }
 }
 .book {
   width: 550px;
@@ -351,6 +522,15 @@ h2::after {
   flex-direction: row;
   justify-content: space-between;
 }
+@media screen and (max-width: 1040px) {
+  .menu {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .right-menu h3 {
+    text-align: end;
+  }
+}
 .menu h3 {
   color: var(--gold);
   font-family: Forum, cursive;
@@ -413,6 +593,15 @@ h2::after {
   display: flex;
   justify-content: space-between;
 }
+@media screen and (max-width: 1200px) {
+  .contact-wrapper {
+    flex-direction: column;
+    gap: 100px;
+  }
+  .right-map {
+    align-self: center;
+  }
+}
 .left-contacts {
   display: flex;
   flex-direction: column;
@@ -452,10 +641,17 @@ h2::after {
   flex-direction: row;
   justify-content: space-between;
 }
+@media screen and (max-width: 1150px) {
+  .cards-zone {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+}
 
 .card form {
-  min-width: 600px;
-  min-height: 386px;
+  width: 600px;
+  height: 386px;
   border: 3px solid var(--gold);
   box-shadow: 2px 4px 4px 0px rgba(34, 60, 80, 0.2);
   padding: 20px 20px 30px 20px;
@@ -534,6 +730,7 @@ h2::after {
   align-items: flex-end;
   gap: 35px;
 }
+
 .get-card h3 {
   font-family: Forum, cursive;
   font-size: 30px;
@@ -559,6 +756,20 @@ h2::after {
   font-weight: 700;
   cursor: pointer;
   transition: all 0.25s ease;
+}
+@media screen and (max-width: 1150px) {
+  .get-card {
+    max-width: 70%;
+    height: auto;
+    align-items: center;
+  }
+  .get-card p {
+    text-align: center;
+  }
+  .getcard-btn {
+    display: flex;
+    gap: 20px;
+  }
 }
 .footer {
   height: 250px;

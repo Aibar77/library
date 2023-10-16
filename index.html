@@ -12,10 +12,11 @@
 </head>
 
 <body>
+  <div class="burger-filter"></div>
   <header class="header">
     <div class="container">
       <h1>Brooklyn Public Library</h1>
-      <nav>
+      <!-- <nav class="navigation">
         <ul>
           <li><a href="#about">About</a></li>
           <li><a href="#favorites">Favorites</a></li>
@@ -23,16 +24,37 @@
           <li><a href="#contacts">Contacts</a></li>
           <li><a href="#librarycard">Library Card</a></li>
         </ul>
-      </nav>
+      </nav> -->
       <!-- svg place -->
-      <svg class="profile-icon" width="28" height="28" viewBox="0 0 28 28" fill="none"
-        xmlns="http://www.w3.org/2000/svg">
-        <g id="icon_profile">
-          <path id="Subtract" fill-rule="evenodd" clip-rule="evenodd"
-            d="M28 14C28 21.732 21.732 28 14 28C6.26801 28 0 21.732 0 14C0 6.26801 6.26801 0 14 0C21.732 0 28 6.26801 28 14ZM18.6667 7.77778C18.6667 10.3551 16.5774 12.4444 14.0001 12.4444C11.4227 12.4444 9.33339 10.3551 9.33339 7.77778C9.33339 5.20045 11.4227 3.11111 14.0001 3.11111C16.5774 3.11111 18.6667 5.20045 18.6667 7.77778ZM19.4998 16.2781C20.9584 17.7367 21.7778 19.715 21.7778 21.7778H14L6.22225 21.7778C6.22225 19.715 7.0417 17.7367 8.50031 16.2781C9.95893 14.8194 11.9372 14 14 14C16.0628 14 18.0411 14.8194 19.4998 16.2781Z"
-            fill="white" />
-        </g>
-      </svg>
+      <div class="right-nav">
+
+        <nav class="nav">
+          <ul class="nav-list">
+            <li class="nav-list-item"><a href="#about" class="nav-list-link">About</a></li>
+            <li class="nav-list-item"><a href="#favorites" class="nav-list-link">Favorites</a></li>
+            <li class="nav-list-item"><a href="#coffeeshop" class="nav-list-link">Coffee shop</a></li>
+            <li class="nav-list-item"><a href="#contacts" class="nav-list-link">Contacts</a></li>
+            <li class="nav-list-item"><a href="#librarycard" class="nav-list-link">Library Card</a></li>
+          </ul>
+        </nav>
+        <div class="header-right-profile">
+          <svg class="profile-icon" width="28" height="28" viewBox="0 0 28 28" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <g id="icon_profile">
+              <path id="Subtract" fill-rule="evenodd" clip-rule="evenodd"
+                d="M28 14C28 21.732 21.732 28 14 28C6.26801 28 0 21.732 0 14C0 6.26801 6.26801 0 14 0C21.732 0 28 6.26801 28 14ZM18.6667 7.77778C18.6667 10.3551 16.5774 12.4444 14.0001 12.4444C11.4227 12.4444 9.33339 10.3551 9.33339 7.77778C9.33339 5.20045 11.4227 3.11111 14.0001 3.11111C16.5774 3.11111 18.6667 5.20045 18.6667 7.77778ZM19.4998 16.2781C20.9584 17.7367 21.7778 19.715 21.7778 21.7778H14L6.22225 21.7778C6.22225 19.715 7.0417 17.7367 8.50031 16.2781C9.95893 14.8194 11.9372 14 14 14C16.0628 14 18.0411 14.8194 19.4998 16.2781Z"
+                fill="white" />
+            </g>
+          </svg>
+        </div>
+        <div class="nav-open">
+          <div class="nav-open-btn">
+            <div class="btn-elem"></div>
+          </div>
+        </div>
+
+
+      </div>
 
     </div>
   </header>
@@ -50,11 +72,13 @@
         <h2 class="about-title">About</h2>
         <p>The Brooklyn Library is a free workspace, a large number of books and a cozy coffee shop inside</p>
         <div class="about-slider">
+          <img class="arrow" src="./assets/images/icons/Carret_Left.svg" alt="leftarrow">
           <img src="./assets/images/img/about/image 1.jpg" alt="girl">
-          <img src="./assets/images/img/about/image 2.jpg" alt="statues">
-          <img src="./assets/images/img/about/image 3.jpg" alt="library">
+          <img class="mobile" src="./assets/images/img/about/image 2.jpg" alt="statues">
+          <img class="tablet" src="./assets/images/img/about/image 3.jpg" alt="library">
           <img src="./assets/images/img/about/image 4.jpg" alt="bookshelf" style="display: none;">
           <img src="./assets/images/img/about/image 5.jpg" alt="anthic building" style="display: none;">
+          <img class="arrow" src="./assets/images/icons/Carret_Right.svg" alt="rightarrow">
         </div>
         <div class="pagination">
           <button class="slider-btn">
@@ -64,6 +88,12 @@
             <div class="btn"></div>
           </button>
           <button class="slider-btn">
+            <div class="btn"></div>
+          </button>
+          <button class="slider-btn tablet">
+            <div class="btn"></div>
+          </button>
+          <button class="slider-btn mobile">
             <div class="btn"></div>
           </button>
         </div>
@@ -426,6 +456,9 @@
       </div>
     </div>
   </footer>
+
+
+  <script src="./assets/js/main.js"></script>
 </body>
 
 </html>
