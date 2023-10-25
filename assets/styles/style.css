@@ -23,6 +23,10 @@ body {
   font-size: 20px;
   font-weight: 400;
 }
+body.active {
+  overflow: hidden;
+  padding-right: 18px;
+}
 li {
   list-style-type: none;
 }
@@ -291,10 +295,25 @@ h2::after {
   display: none;
 }
 .about-slider {
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   gap: 25px;
+  transition: all 1s ease;
 }
+.carousel {
+  width: 1400px;
+  transition: all 0.4s ease;
+  /* border: 1px solid red; */
+  overflow: hidden;
+}
+.carousel-inner {
+  display: flex;
+  gap: 25px;
+  transition: all 0.3s ease;
+}
+
 button.tablet {
   display: none;
 }
@@ -302,22 +321,32 @@ button.mobile {
   display: none;
 }
 @media screen and (max-width: 1439px) {
-  img.tablet {
+  /* img.tablet {
     display: none;
+  } */
+  .carousel {
+    width: 925px;
   }
   button.tablet {
     display: flex;
   }
 }
 @media screen and (max-width: 960px) {
-  img.mobile {
+  /* img.mobile {
     display: none;
+  } */
+  .carousel {
+    width: 450px;
   }
   button.mobile {
     display: flex;
   }
   .arrow {
     display: flex;
+    cursor: pointer;
+  }
+  .arrow.hidden {
+    display: none;
   }
 }
 .pagination {
@@ -346,7 +375,7 @@ button.mobile {
 .slider-btn .btn:hover {
   background-color: var(--grey);
 }
-.slider-btn .first {
+.slider-btn .btn.current {
   background-color: var(--gold);
 }
 #favorites .container {

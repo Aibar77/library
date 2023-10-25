@@ -72,29 +72,33 @@
         <h2 class="about-title">About</h2>
         <p>The Brooklyn Library is a free workspace, a large number of books and a cozy coffee shop inside</p>
         <div class="about-slider">
-          <img class="arrow" src="./assets/images/icons/Carret_Left.svg" alt="leftarrow">
-          <img src="./assets/images/img/about/image 1.jpg" alt="girl">
-          <img class="mobile" src="./assets/images/img/about/image 2.jpg" alt="statues">
-          <img class="tablet" src="./assets/images/img/about/image 3.jpg" alt="library">
-          <img src="./assets/images/img/about/image 4.jpg" alt="bookshelf" style="display: none;">
-          <img src="./assets/images/img/about/image 5.jpg" alt="anthic building" style="display: none;">
-          <img class="arrow" src="./assets/images/icons/Carret_Right.svg" alt="rightarrow">
+          <img class="arrow" id="prev" src="./assets/images/icons/Carret_Left.svg" alt="leftarrow">
+          <div class="carousel">
+            <div class="carousel-inner">
+              <img src="./assets/images/img/about/image 1.jpg" alt="girl" data-num="1">
+              <img src="./assets/images/img/about/image 2.jpg" alt="statues" data-num="2">
+              <img src="./assets/images/img/about/image 3.jpg" alt="library" data-num="3">
+              <img src="./assets/images/img/about/image 4.jpg" alt="bookshelf" data-num="4">
+              <img src="./assets/images/img/about/image 5.jpg" alt="anthic building" data-num="5">
+            </div>
+          </div>
+          <img class="arrow" id="next" src="./assets/images/icons/Carret_Right.svg" alt="rightarrow">
         </div>
         <div class="pagination">
           <button class="slider-btn">
-            <div class="btn first"></div>
+            <div class="btn current" data-num="1"></div>
           </button>
           <button class="slider-btn">
-            <div class="btn"></div>
+            <div class="btn" data-num="2"></div>
           </button>
           <button class="slider-btn">
-            <div class="btn"></div>
+            <div class="btn" data-num="3"></div>
           </button>
           <button class="slider-btn tablet">
-            <div class="btn"></div>
+            <div class="btn" data-num="4"></div>
           </button>
           <button class="slider-btn mobile">
-            <div class="btn"></div>
+            <div class="btn" data-num="5"></div>
           </button>
         </div>
       </div>
