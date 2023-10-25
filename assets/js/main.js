@@ -29,6 +29,7 @@ burgerMenu.addEventListener("click", (e) => {
 
 const paginationDiv = document.querySelector(".pagination");
 const slider = document.querySelector(".carousel-inner");
+const carousel = document.querySelector(".carousel");
 const slides = slider.querySelectorAll("img");
 // next dot switch image
 const dots = Array.from(paginationDiv.querySelectorAll(".btn"));
@@ -36,6 +37,18 @@ const prevBtn = document.querySelector("#prev");
 const nextBtn = document.querySelector("#next");
 let currentSlide = 0;
 let maxSlide = slides.length;
+
+function checkMediaQuery() {
+  slider.style.transform = `translateX(0px)`;
+  currentSlide = 0;
+  dots
+    .find((el) => el.classList.contains("current"))
+    .classList.remove("current");
+  dots[currentSlide].classList.add("current");
+}
+
+// Add a listener for when the window resizes
+window.addEventListener("resize", checkMediaQuery);
 
 nextBtn.addEventListener("click", (e) => {
   // console.log(slides[currentSlide + 1].dataset.num);
