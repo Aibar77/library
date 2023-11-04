@@ -13,19 +13,15 @@
 
 <body>
   <div class="burger-filter"></div>
+  <div class="profile-menu">
+    <p>Profile</p>
+    <button class="login-btn">Log In</button>
+    <button class="register-btn">Register</button>
+  </div>
   <header class="header">
     <div class="container">
       <h1>Brooklyn Public Library</h1>
-      <!-- <nav class="navigation">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#favorites">Favorites</a></li>
-          <li><a href="#coffeeshop">Coffee shop</a></li>
-          <li><a href="#contacts">Contacts</a></li>
-          <li><a href="#librarycard">Library Card</a></li>
-        </ul>
-      </nav> -->
-      <!-- svg place -->
+
       <div class="right-nav">
 
         <nav class="nav">
@@ -52,6 +48,7 @@
             <div class="btn-elem"></div>
           </div>
         </div>
+
 
 
       </div>
@@ -107,19 +104,21 @@
       <div class="container">
         <h2 class="favorites-title">Favorites</h2>
         <div class="seasons-pick">
+
           <strong>Pick favorites of season</strong>
           <div class="radio-buttons">
-            <div class="radio-button"><input type="radio" name="season" id="winter-radio" checked><label
+            <div class="radio-button"><input type="radio" name="season" id="winter-radio" data-season="0" checked><label
                 for="winter-radio">Winter</label></div>
-            <div class="radio-button"><input type="radio" name="season" id="spring-radio"><label
+            <div class="radio-button"><input type="radio" name="season" id="spring-radio" data-season="1"><label
                 for="spring-radio">Spring</label></div>
-            <div class="radio-button"><input type="radio" name="season" id="summer-radio"><label
+            <div class="radio-button"><input type="radio" name="season" id="summer-radio" data-season="2"><label
                 for="summer-radio">Summer</label></div>
-            <div class="radio-button"><input type="radio" name="season" id="autumn-radio"><label
+            <div class="radio-button"><input type="radio" name="season" id="autumn-radio" data-season="3"><label
                 for="autumn-radio">Autumn</label></div>
           </div>
+
           <div class="seasons-books">
-            <div class="winter-books books">
+            <div class="winter-books books" data-season="winter">
               <div class="book">
                 <div class="description">
                   <span class="recommendation">Staff Picks</span>
@@ -178,7 +177,7 @@
                 <img src="./assets/images/img/books/winter-4.png" alt="book4">
               </div>
             </div>
-            <div class="spring-books books" style="display: none;">
+            <div class="spring-books books hidden" data-season="spring">
               <div class="book">
                 <span class="recommendation">Staff Picks</span>
                 <p class="book-title"><strong>The Body</strong></p>
@@ -221,7 +220,7 @@
                 <img src="./assets/images/img/books/spring-4.png" alt="book4">
               </div>
             </div>
-            <div class="summer-books books" style="display: none;">
+            <div class="summer-books books hidden" data-season="summer">
               <div class="book">
                 <span class="recommendation">Staff Picks</span>
                 <p class="book-title"><strong>Crude: a memoir</strong></p>
@@ -267,7 +266,7 @@
                 <img src="./assets/images/img/books/summer-4.png" alt="book4">
               </div>
             </div>
-            <div class="autumn-books books" style="display: none;">
+            <div class="autumn-books books hidden" data-season="autumn">
               <div class="book">
                 <span class="recommendation">Staff Picks</span>
                 <p class="book-title"><strong>Casual Conversation</strong></p>

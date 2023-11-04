@@ -8,13 +8,18 @@ const navLink = document.querySelectorAll(".nav-list-link");
 burgerBtn.addEventListener("click", () => {
   burgerMenu.classList.toggle("active");
   burgerBtnOpen.classList.toggle("active");
-  body.classList.toggle("active");
-  burgerFilter.classList.toggle("active");
+  if (!profileMenu.classList.contains("active")) {
+    body.classList.toggle("active");
+    burgerFilter.classList.toggle("active");
+  }
+
+  profileMenu.classList.remove("active");
 });
 burgerFilter.addEventListener("click", () => {
   burgerMenu.classList.remove("active");
   burgerBtnOpen.classList.remove("active");
   body.classList.remove("active");
+  profileMenu.classList.remove("active");
   burgerFilter.classList.remove("active");
 });
 
@@ -86,4 +91,32 @@ dots.forEach((dot) => {
       .classList.remove("current");
     e.target.classList.add("current");
   });
+});
+
+// favourites section
+
+const radioButtons = document.querySelectorAll("input[name='season']");
+const seasonsBooks = Array.from(document.querySelectorAll(".books"));
+
+radioButtons.forEach((btn) => {
+  btn.addEventListener("change", (e) => {
+    const currentWatch = seasonsBooks.find(
+      (el) => !el.classList.contains("hidden")
+    );
+    currentWatch.classList.add("hidden");
+
+    seasonsBooks[+e.target.dataset.season].classList.remove("hidden");
+  });
+});
+//profile
+const profileIcon = document.querySelector(".header-right-profile");
+const profileMenu = document.querySelector(".profile-menu");
+profileIcon.addEventListener("click", (e) => {
+  if (!burgerMenu.classList.contains("active")) {
+    body.classList.toggle("active");
+    burgerFilter.classList.toggle("active");
+  }
+  profileMenu.classList.toggle("active");
+  burgerMenu.classList.remove("active");
+  burgerBtnOpen.classList.remove("active");
 });
