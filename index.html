@@ -18,6 +18,22 @@
     <button class="login-btn">Log In</button>
     <button class="register-btn">Register</button>
   </div>
+  <div class="register-modal">
+    <p>Register <img src="./assets/images/icons/close_btn.svg" alt="close_btn" id="close_btn"></p>
+
+    <form id="register-form" action="#">
+      <label for="fname">First name</label>
+      <input type="text" id="fname" placeholder="John" required>
+      <label for="lname">Last name</label>
+      <input type="text" id="lname" placeholder="Doe" required>
+      <label for="e-mail">E-mail</label>
+      <input type="email" name="email" id="e-mail" placeholder="johndoe@gmail.com" required>
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="at least 8 characters" minlength="8" required>
+      <input type="submit" value="Sign Up">
+    </form>
+    <div class="login-btn"><span>Already have an account?</span><button>Login</button></div>
+  </div>
   <header class="header">
     <div class="container">
       <h1>Brooklyn Public Library</h1>
@@ -34,6 +50,9 @@
           </ul>
         </nav>
         <div class="header-right-profile">
+          <!-- <div class="profile-icon authorized">
+            JD
+          </div> -->
           <svg class="profile-icon" width="28" height="28" viewBox="0 0 28 28" fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <g id="icon_profile">
