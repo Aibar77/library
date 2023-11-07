@@ -242,7 +242,8 @@ h1 {
 .profile-menu button:hover {
   color: var(--gold);
 }
-.register-modal {
+.register-modal,
+.login-modal {
   width: 250px;
   height: 382px;
   padding: 20px 25px;
@@ -256,10 +257,15 @@ h1 {
   transform: translate(-50%);
   z-index: 200;
 }
-.register-modal.active {
+.login-modal {
+  height: 260px;
+}
+.register-modal.active,
+.login-modal.active {
   display: flex;
 }
-.register-modal p {
+.register-modal p,
+.login-modal p {
   font-family: Forum, cursive;
   text-align: center;
   font-size: 20px;
@@ -268,21 +274,24 @@ h1 {
   margin-bottom: 10px;
   position: relative;
 }
-.register-modal label {
+.register-modal label,
+.login-modal label {
   display: block;
   font-family: Inter, sans-serif;
   font-size: 15px;
   font-weight: 400;
   padding-bottom: 7px;
 }
-.register-modal span {
+.register-modal span,
+.login-modal span {
   font-family: Inter, sans-serif;
   font-size: 10px;
   font-weight: 400;
   text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.16);
   padding-right: 10px;
 }
-.register-modal input {
+.register-modal input,
+.login-modal input {
   width: 100%;
   border: 1px solid var(--gold);
   font-family: inherit;
@@ -291,7 +300,8 @@ h1 {
   margin-bottom: 7px;
   outline: none;
 }
-.register-modal input[type="submit"] {
+.register-modal input[type="submit"],
+.login-modal input[type="submit"] {
   width: 75px;
   height: 30px;
   border-radius: 2px;
@@ -305,11 +315,13 @@ h1 {
   margin-top: 10px;
   transition: all 0.2s ease;
 }
-.register-modal input[type="submit"]:hover {
+.register-modal input[type="submit"]:hover,
+.login-modal input[type="submit"]:hover {
   border: 1px solid var(--gold);
   background-color: #bb945f;
 }
-.register-modal button {
+.register-modal button,
+.login-modal button {
   display: inline-block;
   border: 0;
   outline: none;
@@ -320,17 +332,20 @@ h1 {
   cursor: pointer;
   transition: all 0.2s ease;
 }
-.register-modal button:hover {
+.register-modal button:hover,
+.login-modal button:hover {
   color: var(--gold);
 }
-#close_btn {
+#close_btn,
+.close-login {
   position: absolute;
   right: -10px;
   top: -5px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
-#close_btn:hover {
+#close_btn:hover,
+.close-login:hover {
   background-color: #bb945f;
 }
 @media screen and (max-width: 1040px) {
